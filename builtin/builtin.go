@@ -1,11 +1,8 @@
 package builtin
 
 import (
-	"image/color"
-
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/theme"
 )
 
@@ -29,14 +26,14 @@ func (b *Builtin) Name() string {
 
 func Dark() fyne.CanvasObject {
 	img := canvas.NewImageFromResource(resourceDarkPng)
-	img.FillMode = canvas.ImageFillContain
+	img.FillMode = canvas.ImageFillStretch // until Cover is ready in next release
 	img.ScaleMode = canvas.ImageScaleFastest
-	return container.NewMax(canvas.NewRectangle(color.NRGBA{R: 0x24, G: 0x24, B: 0x24, A: 0xFF}), img)
+	return img
 }
 
 func Light() fyne.CanvasObject {
 	img := canvas.NewImageFromResource(resourceLightPng)
-	img.FillMode = canvas.ImageFillContain
+	img.FillMode = canvas.ImageFillStretch // until Cover is ready in next release
 	img.ScaleMode = canvas.ImageScaleFastest
-	return container.NewMax(canvas.NewRectangle(color.NRGBA{R: 0x1a, G: 0x73, B: 0xe8, A: 0xFF}), img)
+	return img
 }
