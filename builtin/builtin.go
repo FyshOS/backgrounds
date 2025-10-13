@@ -21,19 +21,19 @@ func (b *Builtin) Load(_ fyne.Theme, v fyne.ThemeVariant) fyne.CanvasObject {
 }
 
 func (b *Builtin) Name() string {
-	return "Hexagons"
+	return "Cross"
 }
 
 func Dark() fyne.CanvasObject {
 	img := canvas.NewImageFromResource(resourceDarkPng)
-	img.FillMode = canvas.ImageFillStretch // until Cover is ready in next release
+	img.FillMode = canvas.ImageFillCover
 	img.ScaleMode = canvas.ImageScaleFastest
 	return img
 }
 
 func Light() fyne.CanvasObject {
 	img := canvas.NewImageFromResource(resourceLightPng)
-	img.FillMode = canvas.ImageFillStretch // until Cover is ready in next release
+	img.FillMode = canvas.ImageFillCover
 	img.ScaleMode = canvas.ImageScaleFastest
 	return img
 }
