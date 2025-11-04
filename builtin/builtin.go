@@ -13,27 +13,18 @@ func Default() *Builtin {
 }
 
 func (b *Builtin) Load(_ fyne.Theme, v fyne.ThemeVariant) fyne.CanvasObject {
+	var img *canvas.Image
 	if v == theme.VariantLight {
-		return Light()
+		img = canvas.NewImageFromResource(resourceLightPng)
 	} else {
-		return Dark()
+		img = canvas.NewImageFromResource(resourceDarkPng)
 	}
+
+	img.FillMode = canvas.ImageFillCover
+	img.ScaleMode = canvas.ImageScaleFastest
+	return img
 }
 
 func (b *Builtin) Name() string {
 	return "Cross"
-}
-
-func Dark() fyne.CanvasObject {
-	img := canvas.NewImageFromResource(resourceDarkPng)
-	img.FillMode = canvas.ImageFillCover
-	img.ScaleMode = canvas.ImageScaleFastest
-	return img
-}
-
-func Light() fyne.CanvasObject {
-	img := canvas.NewImageFromResource(resourceLightPng)
-	img.FillMode = canvas.ImageFillCover
-	img.ScaleMode = canvas.ImageScaleFastest
-	return img
 }
