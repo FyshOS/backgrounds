@@ -23,4 +23,5 @@ Or the light variant
 
 ## Thanks
 
-Many thanks to Joshua Grant for the original design work.
+Many thanks to Joshua Grant for the original design work in the "abstract" package.
+Thanks to "Claude" for the builtin FyshOS seascape designs.

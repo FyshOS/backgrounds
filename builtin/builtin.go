@@ -15,7 +15,7 @@ func Default() *Builtin {
 	return &Builtin{}
 }
 
-// Load returns a background image ojbect set up to scale appropriately
+// Load returns a background image object set up to scale appropriately
 func (b *Builtin) Load(_ fyne.Theme, v fyne.ThemeVariant) fyne.CanvasObject {
 	var img *canvas.Image
 	if v == theme.VariantLight {
